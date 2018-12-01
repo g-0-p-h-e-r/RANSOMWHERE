@@ -1,0 +1,25 @@
+.report {
+	width:80%;
+	margin: 0 auto;
+	text-align:center;
+}
+
+.element {
+	display: inline-block;
+	background-color:#2f478f;
+	border-radius:10px;
+	width:200px;
+	height:330px;
+	text-align:center;
+	margin:10px 10px;
+	
+}
+.element img {
+	border-radius:10px 10px 0 0;
+	width:200px;
+	height:300px;
+}
+.element p {
+	margin:0;
+	color:#fff
+}

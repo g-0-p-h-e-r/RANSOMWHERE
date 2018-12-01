@@ -1,0 +1,201 @@
+/*
+body{ background-color:#ffa}
+header{ background-color:#faf }
+a{ background-color:#aff }
+div { background-color:#0fa }
+nav {background-color : #f00 }
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+body { font-family: 'Quicksand', sans-serif; }
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+/*글 디자인*/
+section {
+	width:70%;
+	margin: 0 auto;
+}
+
+
+/*헤더디자인*/
+
+.logo img {
+  width:200px;
+}
+
+.container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  color: #000;
+  padding: 1em 0;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.logo {
+  float: left;
+  margin: 0;
+}
+
+.site-nav {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: #464655;
+  clip-path: circle(0px at top right);
+  transition: clip-path ease-in-out 700ms;
+  padding-top: 1em;
+/*   display: none; */
+}
+
+.site-nav--open {
+  clip-path: circle(250% at top right);
+/*   display: block; */
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  border-bottom: 1px solid #575766;
+}
+
+.site-nav li:last-child {
+  border-bottom: none;
+}
+
+.site-nav a {
+  font-weight: 600;
+  color: #000;
+  display: block;
+  padding: 2em 4em 1em 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: #E4B363;
+  color: #8c8c91;
+}
+
+.menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: block;
+  background: #EBEBD3;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+  transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.open .hamburger {
+  transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+  opacity: 0;
+}
+
+.open .hamburger::after {
+  transform: translateY(-3px) rotate(-90deg);
+}
+
+@media (min-width: 800px) {
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    clip-path: initial;
+  }
+  
+  .site-nav li {
+    display: inline-block;
+    border: none;
+  }
+  
+  .site-nav a {
+    padding: 0;
+    margin-left: 3em;
+  }
+  
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: transparent;
+  }
+  
+  .site-nav--icon {
+    display: none;
+  }
+  
+}
+
+/*글귀 디자인*/
+#sentence {
+    text-align: center;
+    font-size:20px;
+    color: #777;
+    margin-top: 2em;
+}
+#sentence img {
+    width:20px;
+}
+
+
+
+
+
+/*풋터 디자인*/
+footer {
+    width:100%;
+    margin: 20px auto;
+    font-size: 20px;
+    color: #aaa;
+    text-align: center;
+}
+
+.fix_foot {
+    position: fixed;
+    bottom:0;
+}
+
