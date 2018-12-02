@@ -1,0 +1,36 @@
+<html>
+<style>
+a {
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+</style>
+	<body>
+		<form action="/menu">
+			<input type="hidden" value="1" name="process">
+			<input type="submit" value="리포트 업로드">
+		</form>
+		<form action="/menu">
+			<input type="hidden" value="2" name="process">
+			<input type="submit" value="시그니처 업로드">
+		</form>
+		{% if tab == 1 %}
+		<form action="/menu">
+			<input type="file" name="img">
+			<input type="text" name="fileurl">
+			<input type="submit">
+			<input type="hidden" value="3" name="process">
+		</form>
+		{% elif tab == 2 %}
+		<form action="/menu">
+			<input type="text" name="sig">
+			<input type="text" name="ext">
+			<input type="text" name="name">
+			<input type="text" name="url">
+			<input type="text" name="env">
+			<input type="hidden" value="4" name="process">
+			<input type="submit">
+		</form>
+		{% endif %}
+	</body>
+</html>

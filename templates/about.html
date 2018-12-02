@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<!-- 기본 데이터 추가 -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<!-- 외부 스크립트 추가 -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+		<!-- 내부 스크립트 추가 -->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/about.js') }}"></script>
+		<title>RANSOMWHERE</title>
+	</head>
+	<body>
+		<!-- 헤더 디자인 -->
+		<header>
+			<div class="container">
+				<a class="logo" href="./"><img src="{{url_for('static', filename='img/logo2.png')}}"/></a>
+				<nav class="site-nav">
+					<ul>
+						<li><a href="./About-Ransomware">랜섬웨어란?</a></li> 
+						<li><a href="./Ransomware-News">최신 동향</a></li>
+						<li><a href="./Analysis-Report">분석 보고서</a></li>
+						<li><a href="./About-Us">제작자</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="menu-toggle">
+			<div class="hamburger"></div>
+		</div>
+		<!-- 메인 글감 -->
+		<div id="sentence">
+			<img class="quotes" src="{{ url_for('static', filename='img/left_quotes.png') }}">
+			<p>
+				<b>RANSOMWHERE</b>는 사용자의 감염된 파일을<br>
+				분석하고 더 나은 방향을 제시합니다
+			</p>
+			<img class="quotes" src="{{ url_for('static', filename='img/right_quotes.png') }}">
+		</div>
+		<!--소개-->
+		<div id="about">
+		<figure class="snip1344">
+			<img src="{{url_for('static', filename='img/profile/g0pher.png')}}" alt="profile-sample1" class="background"/><img src="{{url_for('static', filename='img/profile/g0pher.png')}}" alt="profile-sample1" class="profile"/>
+			<figcaption>
+				<h3>이재승<span>g0pher</span></h3>
+				<div class="icons">
+					<a href="#"><i class="ion-social-reddit-outline"></i></a>
+					<a href="#"> <i class="ion-social-twitter-outline"></i></a>
+					<a href="#"> <i class="ion-social-vimeo-outline"></i></a>
+				</div>
+			</figcaption>
+		</figure>
+		<figure class="snip1344">
+			<img src="{{url_for('static', filename='img/profile/jwlee.png')}}" alt="profile-sample7" class="background"/><img src="{{url_for('static', filename='img/profile/jwlee.png')}}" alt="profile-sample7" class="profile"/>
+			<figcaption>
+				<h3>이종욱<span>jwlee</span></h3>
+				<div class="icons">
+					<a href="#"><i class="ion-social-reddit-outline"></i></a>
+					<a href="#"> <i class="ion-social-twitter-outline"></i></a>
+					<a href="#"> <i class="ion-social-vimeo-outline"></i></a>
+				</div>
+			</figcaption>
+		</figure>
+		<figure class="snip1344">
+			<img src="{{url_for('static', filename='img/profile/Hoon.png')}}" alt="profile-sample6" class="background"/><img src="{{url_for('static', filename='img/profile/Hoon.png')}}" alt="profile-sample6" class="profile"/>
+			<figcaption>
+				<h3>김광훈<span>Hoon</span></h3>
+				<div class="icons">
+					<a href="#"><i class="ion-social-reddit-outline"></i></a>
+					<a href="#"><i class="ion-social-twitter-outline"></i></a>
+					<a href="#"><i class="ion-social-vimeo-outline"></i></a>
+				</div>
+			</figcaption>
+		</figure>
+		<figure class="snip1344">
+			<img src="{{url_for('static', filename='img/profile/cipp00h.png')}}" alt="profile-sample6" class="background"/><img src="{{url_for('static', filename='img/profile/cipp00h.png')}}" alt="profile-sample6" class="profile"/>
+			<figcaption>
+				<h3>박석은<span>cipp00h</span></h3>
+				<div class="icons">
+					<a href="#"><i class="ion-social-reddit-outline"></i></a>
+					<a href="#"><i class="ion-social-twitter-outline"></i>
+					</a><a href="#"><i class="ion-social-vimeo-outline"></i></a>
+				</div>
+			</figcaption>
+		</figure>
+		<figure class="snip1344">
+			<img src="{{url_for('static', filename='img/profile/h4nu.png')}}" alt="profile-sample6" class="background"/><img src="{{url_for('static', filename='img/profile/h4nu.png')}}" alt="profile-sample6" class="profile"/>
+			<figcaption>
+				<h3>정현우<span>h4nu</span></h3>
+				<div class="icons">
+					<a href="#"><i class="ion-social-reddit-outline"></i></a>
+					<a href="#"><i class="ion-social-twitter-outline"></i></a>
+					<a href="#"><i class="ion-social-vimeo-outline"></i></a></div>
+			</figcaption>
+		</figure>
+		</div>
+
+		<!--저작권-->
+		<footer>
+			Copyright 2018. RANSOMWHERE
+		</footer>
+	</body>
+</html>

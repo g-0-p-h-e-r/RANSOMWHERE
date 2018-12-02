@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<!-- 기본 데이터 추가 -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<!-- 외부 스크립트 추가 -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+		<!-- 내부 스크립트 추가 -->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+		<title>RANSOMWHERE</title>
+	</head>
+	<body>
+		<!-- 헤더 디자인 -->
+		<header>
+			<div class="container">
+				<a class="logo" href="./"><img src="{{url_for('static', filename='img/logo2.png')}}"/></a>
+				<nav class="site-nav">
+					<ul>
+						<li><a href="./About-Ransomware">랜섬웨어란?</a></li> 
+						<li><a href="./Ransomware-News">최신 동향</a></li>
+						<li><a href="./Analysis-Report">분석 보고서</a></li>
+						<li><a href="./About-Us">제작자</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="menu-toggle">
+			<div class="hamburger"></div>
+		</div>
+		<!-- 메인 글감 -->
+		<div id="sentence">
+			<img class="quotes" src="{{ url_for('static', filename='img/left_quotes.png') }}">
+			<p>
+				<b>RANSOMWHERE</b>는 사용자의 감염된 파일을<br>
+				분석하고 더 나은 방향을 제시합니다
+			</p>
+			<img class="quotes" src="{{ url_for('static', filename='img/right_quotes.png') }}">
+		</div>
+		<!-- 소개 시작-->
+		<section>
+			<h1>랜섬웨어란?</h2><hr>
+			<p>랜섬웨어는 컴퓨터 시스템을 감염시켜 파일 접근을 제한하고 돈을 요구하는 악성 소프트웨어입니다. 랜섬웨어 단어 자체는  몸값을 뜻하는 Ransom과 제품을 뜻하는 Ware을 합친 합성어입니다. 대부분 사용자 동의 없이 컴퓨터에 설치되어 중요한 파일들을 암호화 시킵니다. 이를 복호화해주는 대신 금전적인 대가를 요구합니다. </p>
+			<img src="{{url_for('static', filename='img/doc/ransom.png')}}" width="100px">
+			<h1>예방법</h2>
+			<ul>
+				<li>Windows Update를 필수로 해야합니다.
+				<li>최신버전 백신을 사용해야합니다.
+				<li>출처가 불명확한 이메일과 URL은 열어보면 안됩니다.
+				<li>중요한 자료는 항상 백업 해야됩니다.
+			</ul>
+			<h1>컴퓨터가 랜섬웨어에 감염되었을 경우</h1>
+			<ol>
+				<li>감염된 파일 중 하나를 저희 사이트에 업로드 하여, 복호화 도구가 있는지 확인합니다.
+				<li>복호화 도구가 존재할 경우 파일을 다운로드 받아 실행합니다.
+				<li>복호화가 완료되면, 완벽한 랜섬웨어 제거를 위해 상용 백신 검사를 통해 치료합니다.
+			</ol>
+		</section>
+
+
+
+		<!--저작권-->
+		<footer>
+			Copyright 2018. RANSOMWHERE
+		</footer>
+	</body>
+</html>

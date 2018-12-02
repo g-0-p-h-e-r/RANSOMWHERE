@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<!-- 기본 데이터 추가 -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<!-- 외부 스크립트 추가 -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">	
+		<!-- 내부 스크립트 추가 -->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+		<title>RANSOMWHERE</title>
+	</head>
+	<body>
+		<!-- 헤더 디자인 -->
+		<header>
+			<div class="container">
+				<a class="logo" href="./"><img src="{{url_for('static', filename='img/logo2.png')}}"/></a>
+				<nav class="site-nav">
+					<ul>
+						<li><a href="./About-Ransomware">랜섬웨어란?</a></li> 
+						<li><a href="./Ransomware-News">최신 동향</a></li>
+						<li><a href="./Analysis-Report">분석 보고서</a></li>
+						<li><a href="./About-Us">제작자</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="menu-toggle">
+			<div class="hamburger"></div>
+		</div>
+		<!-- 메인 글감 -->
+		<div id="sentence">
+			<img class="quotes" src="{{ url_for('static', filename='img/left_quotes.png') }}">
+			<p>
+			<b>RANSOMWHERE</b>는 사용자의 감염된 파일을<br>
+			분석하고 더 나은 방향을 제시합니다
+			</p>
+			<img class="quotes" src="{{ url_for('static', filename='img/right_quotes.png') }}">
+		</div>
+		<!--결과 알림창-->
+		{% if flag == 1 %}
+		<div class="success message">
+			<h2>We have Decrypter</h2>
+			<p>랜섬웨어 확인 가능. 복호화 툴 사용 가능.</p>
+		</div>
+
+		{% elif flag == -1 %}
+		<div class="error message">
+			<h2>We don't have Decrypter</h2>
+			<p>랜섬웨어 확인 가능. 복호화 툴 사용 불가</p>
+		</div>
+
+		{% else %}
+		<div class="warning message">
+			<h2>Is this Encrypted?</h2>
+			<p>랜섬웨어 확인 불가.</p>
+		</div>
+
+
+		{% endif %}
+
+		<!--결과 테이블-->
+		<table class="table-fill">
+			<thead>
+				<tr>
+					<th class="text-first">항목</th>
+					<th class="text-second">분석결과</th>
+				</tr>
+			</thead>
+			<tbody class="table-hover">
+				{% for key, value in result.items() %}
+				<tr>
+					<td class="text-first"> {{ key }} </td>
+
+					{% if key != "복호화 도구" %}
+					<td class="text-second"> {{ value }} </td>
+					{% else %}
+					<td class="text-second"><a href="{{value}}">복호화 도구 다운로드</a></td>
+					{% endif %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+
+		<!--
+	  <div class="information message">
+	  <h2>Information</h2>
+	  <p>This is an 'information message' div. It helps people get to know the site a little better. </p>
+	  </div>
+	  <div class="announcement message">
+	  <h2>Announcement</h2>
+	  <p>This is an 'announcement message' div! It is loud and proud to say things that you want people to hear first!</p>
+	  </div>
+	  <div class="success message">
+	  <h2>Success</h2>
+	  <p>This is a 'success message' div. It is shown if a goal is reached or something is accomplished.</p>
+	  </div>
+	  <div class="warning message">
+	  <h2>Warning</h2>
+	  <p>This is a 'warning message' div. It warns the users that to expect some changes or limitations.</p>
+	  </div>
+	  <div class="error message">
+	  <h2>Error</h2>
+	  <p>This is an 'error message' div. It stresses that there is an immediate problem. this should be used sparingly.</p>
+	  </div>
+		-->
+
+		<!--저작권-->
+		<footer>
+			Copyright 2018. RANSOMWHERE
+		</footer>
+	</body>
+</html>

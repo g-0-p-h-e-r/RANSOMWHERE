@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<!-- 기본 데이터 추가 -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<!-- 외부 스크립트 추가 -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+		<!-- 내부 스크립트 추가 -->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/news.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='js/news.js') }}"></script>
+		<title>RANSOMWHERE</title>
+	</head>
+	<body>
+		<!-- 헤더 디자인 -->
+		<header>
+			<div class="container">
+				<a class="logo" href="./"><img src="{{url_for('static', filename='img/logo2.png')}}"/></a>
+				<nav class="site-nav">
+					<ul>
+						<li><a href="./About-Ransomware">랜섬웨어란?</a></li> 
+						<li><a href="./Ransomware-News">최신 동향</a></li>
+						<li><a href="./Analysis-Report">분석 보고서</a></li>
+						<li><a href="./About-Us">제작자</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="menu-toggle">
+			<div class="hamburger"></div>
+		</div>
+		<!-- 메인 글감 -->
+		<div id="sentence">
+			<img class="quotes" src="{{ url_for('static', filename='img/left_quotes.png') }}">
+			<p>
+				<b>RANSOMWHERE</b>는 사용자의 감염된 파일을<br>
+				분석하고 더 나은 방향을 제시합니다
+			</p>
+			<img class="quotes" src="{{ url_for('static', filename='img/right_quotes.png') }}">
+		</div>
+
+		<!-- 검색 -->
+		<div>
+		</div>
+
+		<!-- 최신 이슈 리스트 -->
+		<div class="tbl-header">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th class="date">날짜</th>
+						<th class="issue">이슈</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="tbl-content">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tbody>
+					{% for i in news %}
+					<tr>
+						<td class="date">{{i[0]}}</td>
+						<td class="issue"><a href="{{i[2]}}" target="_blank">{{i[1]}}</a></td>
+					<tr>
+					{% endfor%}
+				</tbody>
+			</table>
+		</div>													      
+		<!--저작권-->
+		<footer>
+			Copyright 2018. RANSOMWHERE
+		</footer>
+	</body>
+</html>
